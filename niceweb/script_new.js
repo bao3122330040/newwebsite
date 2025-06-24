@@ -19,7 +19,7 @@ let chatbotState = {
   isOpen: false,
   sessionId: null,
   isTyping: false,
-  useAgent: true // Use agent by default for enhanced capabilities
+  useAgent: true, // Use agent by default for enhanced capabilities
 };
 
 // Sample Products Data
@@ -75,7 +75,7 @@ const products = [
   },
   {
     id: 8,
-    name: "Gaming Monitor 27\"",
+    name: 'Gaming Monitor 27"',
     price: 299.99,
     category: "accessories",
     icon: "fas fa-desktop",
@@ -171,7 +171,10 @@ function initializeChatbot() {
       // Send welcome message if it's a new session
       if (!chatbotState.sessionId) {
         setTimeout(() => {
-          addChatMessage("bot", "🎮 Welcome to GameZone! I'm your AI gaming assistant. How can I help you find the perfect gaming gear today?");
+          addChatMessage(
+            "bot",
+            "🎮 Welcome to GameZone! I'm your AI gaming assistant. How can I help you find the perfect gaming gear today?"
+          );
         }, 500);
       }
     }
@@ -251,7 +254,7 @@ function createChatbotElements() {
 async function sendMessage() {
   const chatbotInput = document.getElementById("chatbot-input");
   const messageText = chatbotInput.value.trim();
-  
+
   if (messageText === "" || chatbotState.isTyping) return;
 
   // Add user message to chat
@@ -264,17 +267,19 @@ async function sendMessage() {
 
   try {
     // Use either agent or regular chatbot based on state
-    const endpoint = chatbotState.useAgent ? '/api/agent/chat' : '/api/chatbot/chat';
-    
+    const endpoint = chatbotState.useAgent
+      ? "/api/agent/chat"
+      : "/api/chatbot/chat";
+
     const response = await fetch(endpoint, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         message: messageText,
-        sessionId: chatbotState.sessionId
-      })
+        sessionId: chatbotState.sessionId,
+      }),
     });
 
     const data = await response.json();
@@ -290,13 +295,18 @@ async function sendMessage() {
       addChatMessage("bot", data.response, data.toolsUsed);
     } else {
       removeTypingIndicator();
-      addChatMessage("bot", "Sorry, I'm having trouble right now. Please try again later.");
+      addChatMessage(
+        "bot",
+        "Sorry, I'm having trouble right now. Please try again later."
+      );
     }
-
   } catch (error) {
-    console.error('Chat error:', error);
+    console.error("Chat error:", error);
     removeTypingIndicator();
-    addChatMessage("bot", "Sorry, I'm experiencing connection issues. Please try again later.");
+    addChatMessage(
+      "bot",
+      "Sorry, I'm experiencing connection issues. Please try again later."
+    );
   } finally {
     chatbotState.isTyping = false;
   }
@@ -307,7 +317,7 @@ function addChatMessage(sender, text, toolsUsed = null) {
   const chatbotMessages = document.getElementById("chatbot-messages");
   const messageElement = document.createElement("div");
   messageElement.className = `chat-message ${sender}`;
-  
+
   // Create message content
   const messageContent = document.createElement("div");
   messageContent.className = "message-content";
@@ -318,7 +328,7 @@ function addChatMessage(sender, text, toolsUsed = null) {
   if (toolsUsed && toolsUsed.length > 0) {
     const toolsElement = document.createElement("div");
     toolsElement.className = "tools-used";
-    toolsElement.innerHTML = `<small>🔧 Used: ${toolsUsed.join(', ')}</small>`;
+    toolsElement.innerHTML = `<small>🔧 Used: ${toolsUsed.join(", ")}</small>`;
     messageElement.appendChild(toolsElement);
   }
 
@@ -334,7 +344,8 @@ function addTypingIndicator() {
   const typingElement = document.createElement("div");
   typingElement.className = "chat-message bot typing-indicator";
   typingElement.id = "typing-indicator";
-  typingElement.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+  typingElement.innerHTML =
+    '<div class="typing-dots"><span></span><span></span><span></span></div>';
   chatbotMessages.appendChild(typingElement);
   chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 }
@@ -419,7 +430,10 @@ function removeFromCart(productId) {
 
 function updateCartUI() {
   // Update cart count
-  cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+  cartCount.textContent = cart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   // Update cart items
   cartItems.innerHTML = "";
@@ -503,7 +517,7 @@ function searchProducts(searchTerm) {
   );
 
   productsGrid.innerHTML = "";
-  
+
   if (filteredProducts.length === 0) {
     productsGrid.innerHTML = '<p class="no-results">No products found</p>';
     return;
@@ -544,9 +558,12 @@ function startCountdown() {
       const minutesElement = document.getElementById("minutes");
       const secondsElement = document.getElementById("seconds");
 
-      if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, "0");
-      if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, "0");
-      if (secondsElement) secondsElement.textContent = seconds.toString().padStart(2, "0");
+      if (hoursElement)
+        hoursElement.textContent = hours.toString().padStart(2, "0");
+      if (minutesElement)
+        minutesElement.textContent = minutes.toString().padStart(2, "0");
+      if (secondsElement)
+        secondsElement.textContent = seconds.toString().padStart(2, "0");
     } else {
       clearInterval(countdownInterval);
       const dealTimer = document.querySelector(".deal-timer");

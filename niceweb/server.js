@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const path = require("path");
 const chatbotRoutes = require("./routes/chatbot");
+const agentRoutes = require("./routes/agent");
 const { requestLogger, formatError } = require("./middleware/validation");
 const config = require("./config/config");
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname)));
 
 // Routes
 app.use("/api/chatbot", chatbotRoutes);
+app.use("/api/agent", agentRoutes);
 
 // Serve index.html for root route
 app.get("/", (req, res) => {
