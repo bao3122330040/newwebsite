@@ -14,9 +14,9 @@ module.exports = {
 
   // Gemini configuration
   gemini: {
-    model: "gemini-pro",
-    maxTokens: 1000,
-    temperature: 0.7,
+    model: process.env.MODEL_NAME || "gemini-2.5-flash",
+    maxTokens: parseInt(process.env.MAX_TOKENS) || 8192,
+    temperature: parseFloat(process.env.TEMPERATURE) || 0.7,
     topK: 40,
     topP: 0.95,
   },

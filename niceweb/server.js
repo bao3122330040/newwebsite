@@ -1,15 +1,21 @@
 const express = require("express");
 const cors = require("cors");
-const dotenv = require("dotenv");
-const bodyParser = require("body-parser");
 const path = require("path");
-const chatbotRoutes = require("./routes/chatbot");
-const agentRoutes = require("./routes/agent");
+const bodyParser = require("body-parser");
+
+// Load environment configuration first, before importing any other modules
+const environment = require("./config/environment");
+
+// Only proceed if the API key is available
+if (!environment.env.GOOGLE_API_KEY) {
+  console.error("\n🚫 Cannot start server: Missing GOOGLE_API_KEY");
+  process.exit(1);
+}
+
 const { requestLogger, formatError } = require("./middleware/validation");
 const config = require("./config/config");
-
-// Load environment variables
-dotenv.config();
+const chatbotRoutes = require("./routes/chatbot");
+const agentRoutes = require("./routes/agent");
 
 const app = express();
 const PORT = process.env.PORT || 5000;

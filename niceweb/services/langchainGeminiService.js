@@ -1,3 +1,4 @@
+const environment = require("../config/environment");
 const { ChatGoogleGenerativeAI } = require("@langchain/google-genai");
 const {
   HumanMessage,
@@ -11,10 +12,15 @@ const { v4: uuidv4 } = require("uuid");
 
 class LangChainGeminiService {
   constructor() {
-    this.apiKey = process.env.GOOGLE_API_KEY;
-    this.maxTokens = parseInt(process.env.MAX_TOKENS) || 1000;
-    this.temperature = parseFloat(process.env.TEMPERATURE) || 0.7;
-    this.modelName = process.env.MODEL_NAME || "gemini-pro";
+    this.apiKey = environment.env.GOOGLE_API_KEY;
+    this.maxTokens = parseInt(environment.env.MAX_TOKENS) || 8192;
+    this.temperature = parseFloat(environment.env.TEMPERATURE) || 0.7;
+    this.modelName = environment.env.MODEL_NAME || "gemini-2.5-flash";
+
+    console.log("LangChainGeminiService initialization:");
+    console.log("- API Key exists:", !!this.apiKey);
+    console.log("- Model name:", this.modelName);
+    console.log("- Max tokens:", this.maxTokens);
 
     if (!this.apiKey) {
       throw new Error("GOOGLE_API_KEY not found in environment variables");
