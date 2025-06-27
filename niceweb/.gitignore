@@ -177,3 +177,7 @@ backup/
 # Performance monitoring
 .clinic/
 clinic.html
+
+# Backups
+backups/
+*.bak

@@ -92,3 +92,74 @@ See `config/config.js` for customizable settings:
 - API timeouts
 - Chat history limits
 - Security settings
+
+---
+
+## 🧪 Testing
+
+- Test Gemini API: `node test-gemini.js`
+- Test end-to-end chatbot: `node test-e2e-chatbot.js`
+
+## 🔒 Security
+
+- Không commit `.env` lên git!
+- Đã bật rate limit, CORS, helmet, input validation.
+
+## 🚀 Deployment
+
+Xem chi tiết trong `DEPLOYMENT_PLAN.md` (Vercel, Netlify, Railway, Heroku...)
+
+## 📞 Support
+
+- DevOps: devops@gamezone.com
+- Status: status.gamezone.com
+
+## 🌐 Frontend API Config
+
+- Đảm bảo script.js sử dụng biến BACKEND_URL để gọi API (cấu hình qua .env hoặc build tool khi deploy).
+- Ví dụ với Vercel/Netlify: set BACKEND_URL trong dashboard hoặc vercel.json/netlify.toml.
+
+## 🗜️ Asset Optimization
+
+- Minify CSS: `npx cleancss -o style.min.css style.css`
+- Minify JS: `npx uglify-js script.js -o script.min.js`
+- Sử dụng file minified khi deploy production.
+
+## ⚡ Performance
+
+- Có thể lazy load chatbot bằng dynamic import trong script.js để tối ưu initial load.
+
+---
+
+## 🧩 Roadmap mở rộng
+
+### Database Integration
+
+- Sử dụng `database.js` (PostgreSQL Pool)
+- Cấu hình biến môi trường `DATABASE_URL`
+- Migration: dùng Prisma, Sequelize, hoặc SQL script
+- Backup: xem backup.sh trong DEPLOYMENT_PLAN.md
+
+### User Authentication
+
+- Sử dụng `auth/authService.js` (JWT + bcrypt)
+- Cấu hình biến môi trường `JWT_SECRET`
+- Tích hợp vào route `/api/auth` (login, register, profile)
+
+### Payment Gateway
+
+- Sử dụng `paymentService.js` (Stripe/PayPal stub)
+- Cấu hình key provider, test với sandbox
+- Tích hợp vào route `/api/payment`
+
+### Multi-language Support
+
+- Sử dụng `i18n.js` cho backend/frontend
+- Thêm ngôn ngữ mới vào object `translations`
+- Gọi `t(key, lang)` để lấy text phù hợp
+
+### Mobile App
+
+- API-first: đảm bảo backend trả JSON chuẩn REST
+- Có thể dùng OpenAPI/Swagger để generate client
+- Gợi ý tech stack: React Native, Flutter
