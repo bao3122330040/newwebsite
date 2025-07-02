@@ -1,0 +1,12 @@
+{
+  "greeting": "Xin chào!",
+  "help": "Tôi có thể giúp gì cho bạn?",
+  "error_generic": "Đã xảy ra lỗi.",
+  "category_games": "Trò chơi",
+  "category_accessories": "Phụ kiện",
+  "chatbot_welcome": "Chào mừng đến với chatbot GameZone!",
+  "notification_payment_success": "Thanh toán thành công.",
+  "notification_payment_failed": "Thanh toán thất bại.",
+  "date_format": "DD/MM/YYYY",
+  "items_count": "{count} sản phẩm"
+}

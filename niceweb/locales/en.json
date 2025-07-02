@@ -1,0 +1,12 @@
+{
+  "greeting": "Hello!",
+  "help": "How can I help you?",
+  "error_generic": "An error occurred.",
+  "category_games": "Games",
+  "category_accessories": "Accessories",
+  "chatbot_welcome": "Welcome to GameZone chatbot!",
+  "notification_payment_success": "Payment successful.",
+  "notification_payment_failed": "Payment failed.",
+  "date_format": "MM/DD/YYYY",
+  "items_count": "{count} item(s)"
+}
