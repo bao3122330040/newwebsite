@@ -47,8 +47,14 @@
                     Discover the latest gaming gear, accessories, and equipment for the ultimate gaming experience
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">Shop Now</button>
-                    <button class="btn btn-secondary">View Catalog</button>
+                    <button class="btn btn-primary" id="shop-now-btn" aria-label="Shop now for gaming products">
+                        <span class="btn-text">Shop Now</span>
+                        <span class="loading-spinner" style="display: none;"></span>
+                    </button>
+                    <button class="btn btn-secondary" id="view-catalog-btn" aria-label="View product catalog">
+                        <span class="btn-text">View Catalog</span>
+                        <span class="loading-spinner" style="display: none;"></span>
+                    </button>
                 </div>
             </div>
             <div class="hero-image">
@@ -67,30 +73,30 @@
         <div class="container">
             <h2 class="section-title">Gaming Categories</h2>
             <div class="categories-grid">
-                <div class="category-card" data-category="pc">
+                <div class="category-card" data-category="pc" tabindex="0" role="button" aria-label="Browse PC Gaming products">
                     <div class="category-icon">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fas fa-desktop" aria-hidden="true"></i>
                     </div>
                     <h3>PC Gaming</h3>
                     <p>High-performance computers and components</p>
                 </div>
-                <div class="category-card" data-category="console">
+                <div class="category-card" data-category="console" tabindex="0" role="button" aria-label="Browse Console Gaming products">
                     <div class="category-icon">
-                        <i class="fas fa-gamepad"></i>
+                        <i class="fas fa-gamepad" aria-hidden="true"></i>
                     </div>
                     <h3>Consoles</h3>
                     <p>Latest gaming consoles and accessories</p>
                 </div>
-                <div class="category-card" data-category="accessories">
+                <div class="category-card" data-category="accessories" tabindex="0" role="button" aria-label="Browse Gaming Accessories">
                     <div class="category-icon">
-                        <i class="fas fa-headset"></i>
+                        <i class="fas fa-headset" aria-hidden="true"></i>
                     </div>
                     <h3>Accessories</h3>
                     <p>Gaming peripherals and gear</p>
                 </div>
-                <div class="category-card" data-category="mobile">
+                <div class="category-card" data-category="mobile" tabindex="0" role="button" aria-label="Browse Mobile Gaming products">
                     <div class="category-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                     </div>
                     <h3>Mobile Gaming</h3>
                     <p>Mobile devices and accessories</p>
@@ -103,14 +109,59 @@
     <section class="products" id="products">
         <div class="container">
             <h2 class="section-title">Featured Products</h2>
-            <div class="products-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="pc">PC</button>
-                <button class="filter-btn" data-filter="console">Console</button>
-                <button class="filter-btn" data-filter="accessories">Accessories</button>
+            <div class="products-filter" role="tablist" aria-label="Product filter">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="products-grid">
+                    <span class="btn-text">All</span>
+                    <span class="loading-spinner" style="display: none;"></span>
+                </button>
+                <button class="filter-btn" data-filter="pc" role="tab" aria-selected="false" aria-controls="products-grid">
+                    <span class="btn-text">PC</span>
+                    <span class="loading-spinner" style="display: none;"></span>
+                </button>
+                <button class="filter-btn" data-filter="console" role="tab" aria-selected="false" aria-controls="products-grid">
+                    <span class="btn-text">Console</span>
+                    <span class="loading-spinner" style="display: none;"></span>
+                </button>
+                <button class="filter-btn" data-filter="accessories" role="tab" aria-selected="false" aria-controls="products-grid">
+                    <span class="btn-text">Accessories</span>
+                    <span class="loading-spinner" style="display: none;"></span>
+                </button>
             </div>
-            <div class="products-grid">
-                <!-- Products will be dynamically loaded -->
+            <div class="products-grid" id="products-grid">
+                <!-- Loading skeleton (initially visible) -->
+                <div class="skeleton-card skeleton">
+                    <div class="skeleton-image skeleton"></div>
+                    <div class="skeleton-text title skeleton"></div>
+                    <div class="skeleton-text content skeleton"></div>
+                    <div class="skeleton-text price skeleton"></div>
+                </div>
+                <div class="skeleton-card skeleton">
+                    <div class="skeleton-image skeleton"></div>
+                    <div class="skeleton-text title skeleton"></div>
+                    <div class="skeleton-text content skeleton"></div>
+                    <div class="skeleton-text price skeleton"></div>
+                </div>
+                <div class="skeleton-card skeleton">
+                    <div class="skeleton-image skeleton"></div>
+                    <div class="skeleton-text title skeleton"></div>
+                    <div class="skeleton-text content skeleton"></div>
+                    <div class="skeleton-text price skeleton"></div>
+                </div>
+                <div class="skeleton-card skeleton">
+                    <div class="skeleton-image skeleton"></div>
+                    <div class="skeleton-text title skeleton"></div>
+                    <div class="skeleton-text content skeleton"></div>
+                    <div class="skeleton-text price skeleton"></div>
+                </div>
+                <!-- Products will be dynamically loaded here -->
+                
+                <!-- Error state (hidden by default) -->
+                <div class="error-state" id="products-error" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Failed to Load Products</h3>
+                    <p>Please check your connection and try again.</p>
+                    <button class="btn btn-primary" onclick="location.reload()">Retry</button>
+                </div>
             </div>
         </div>
     </section>
@@ -142,7 +193,10 @@
                             <span class="timer-label">Seconds</span>
                         </div>
                     </div>
-                    <button class="btn btn-primary">Claim Deal</button>
+                    <button class="btn btn-primary" id="claim-deal-btn" aria-label="Claim limited time gaming setup bundle deal">
+                        <span class="btn-text">Claim Deal</span>
+                        <span class="loading-spinner" style="display: none;"></span>
+                    </button>
                 </div>
                 <div class="deals-grid">
                     <div class="deal-item">
