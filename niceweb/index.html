@@ -10,14 +10,14 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header glass-effect">
         <nav class="navbar">
             <div class="nav-container">
-                <div class="nav-logo">
+                <div class="nav-logo gradient-text">
                     <i class="fas fa-gamepad"></i>
                     <span>GameZone</span>
                 </div>
-                <ul class="nav-menu">
+                <ul class="nav-menu modern-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#categories">Categories</a></li>
@@ -25,33 +25,34 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="nav-icons">
-                    <i class="fas fa-search" id="search-btn"></i>
-                    <i class="fas fa-shopping-cart" id="cart-btn">
+                    <div class="icon-btn" id="search-btn"><i class="fas fa-search"></i></div>
+                    <div class="icon-btn cart-btn" id="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count">0</span>
-                    </i>
-                    <i class="fas fa-user" id="user-btn"></i>
-                    <i class="fas fa-bars" id="mobile-menu"></i>
+                    </div>
+                    <div class="icon-btn" id="user-btn"><i class="fas fa-user"></i></div>
+                    <div class="icon-btn" id="mobile-menu"><i class="fas fa-bars"></i></div>
                 </div>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero gradient-bg">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Level Up Your <span class="highlight">Gaming</span>
+                    Level Up Your <span class="highlight gradient-text">Gaming</span>
                 </h1>
                 <p class="hero-subtitle">
                     Discover the latest gaming gear, accessories, and equipment for the ultimate gaming experience
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary" id="shop-now-btn" aria-label="Shop now for gaming products">
+                    <button class="btn btn-primary glass-btn" id="shop-now-btn" aria-label="Shop now for gaming products">
                         <span class="btn-text">Shop Now</span>
                         <span class="loading-spinner" style="display: none;"></span>
                     </button>
-                    <button class="btn btn-secondary" id="view-catalog-btn" aria-label="View product catalog">
+                    <button class="btn btn-secondary glass-btn" id="view-catalog-btn" aria-label="View product catalog">
                         <span class="btn-text">View Catalog</span>
                         <span class="loading-spinner" style="display: none;"></span>
                     </button>
@@ -59,9 +60,9 @@
             </div>
             <div class="hero-image">
                 <div class="gaming-setup">
-                    <div class="monitor"></div>
-                    <div class="keyboard"></div>
-                    <div class="mouse"></div>
+                    <div class="monitor neon-glow"></div>
+                    <div class="keyboard neon-glow"></div>
+                    <div class="mouse neon-glow"></div>
                 </div>
             </div>
         </div>
@@ -71,30 +72,30 @@
     <!-- Featured Categories -->
     <section class="categories" id="categories">
         <div class="container">
-            <h2 class="section-title">Gaming Categories</h2>
-            <div class="categories-grid">
-                <div class="category-card" data-category="pc" tabindex="0" role="button" aria-label="Browse PC Gaming products">
+            <h2 class="section-title gradient-text">Gaming Categories</h2>
+            <div class="categories-grid modern-categories">
+                <div class="category-card glass-effect" data-category="pc" tabindex="0" role="button" aria-label="Browse PC Gaming products">
                     <div class="category-icon">
                         <i class="fas fa-desktop" aria-hidden="true"></i>
                     </div>
                     <h3>PC Gaming</h3>
                     <p>High-performance computers and components</p>
                 </div>
-                <div class="category-card" data-category="console" tabindex="0" role="button" aria-label="Browse Console Gaming products">
+                <div class="category-card glass-effect" data-category="console" tabindex="0" role="button" aria-label="Browse Console Gaming products">
                     <div class="category-icon">
                         <i class="fas fa-gamepad" aria-hidden="true"></i>
                     </div>
                     <h3>Consoles</h3>
                     <p>Latest gaming consoles and accessories</p>
                 </div>
-                <div class="category-card" data-category="accessories" tabindex="0" role="button" aria-label="Browse Gaming Accessories">
+                <div class="category-card glass-effect" data-category="accessories" tabindex="0" role="button" aria-label="Browse Gaming Accessories">
                     <div class="category-icon">
                         <i class="fas fa-headset" aria-hidden="true"></i>
                     </div>
                     <h3>Accessories</h3>
                     <p>Gaming peripherals and gear</p>
                 </div>
-                <div class="category-card" data-category="mobile" tabindex="0" role="button" aria-label="Browse Mobile Gaming products">
+                <div class="category-card glass-effect" data-category="mobile" tabindex="0" role="button" aria-label="Browse Mobile Gaming products">
                     <div class="category-icon">
                         <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                     </div>
@@ -108,59 +109,38 @@
     <!-- Featured Products -->
     <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            <div class="products-filter" role="tablist" aria-label="Product filter">
-                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="products-grid">
+            <h2 class="section-title gradient-text">Featured Products</h2>
+            <div class="products-filter modern-filter" role="tablist" aria-label="Product filter">
+                <button class="filter-btn active glass-btn" data-filter="all" role="tab" aria-selected="true" aria-controls="products-grid">
                     <span class="btn-text">All</span>
                     <span class="loading-spinner" style="display: none;"></span>
                 </button>
-                <button class="filter-btn" data-filter="pc" role="tab" aria-selected="false" aria-controls="products-grid">
+                <button class="filter-btn glass-btn" data-filter="pc" role="tab" aria-selected="false" aria-controls="products-grid">
                     <span class="btn-text">PC</span>
                     <span class="loading-spinner" style="display: none;"></span>
                 </button>
-                <button class="filter-btn" data-filter="console" role="tab" aria-selected="false" aria-controls="products-grid">
+                <button class="filter-btn glass-btn" data-filter="console" role="tab" aria-selected="false" aria-controls="products-grid">
                     <span class="btn-text">Console</span>
                     <span class="loading-spinner" style="display: none;"></span>
                 </button>
-                <button class="filter-btn" data-filter="accessories" role="tab" aria-selected="false" aria-controls="products-grid">
+                <button class="filter-btn glass-btn" data-filter="accessories" role="tab" aria-selected="false" aria-controls="products-grid">
                     <span class="btn-text">Accessories</span>
                     <span class="loading-spinner" style="display: none;"></span>
                 </button>
             </div>
-            <div class="products-grid" id="products-grid">
+            <div class="products-grid modern-products" id="products-grid">
                 <!-- Loading skeleton (initially visible) -->
-                <div class="skeleton-card skeleton">
-                    <div class="skeleton-image skeleton"></div>
-                    <div class="skeleton-text title skeleton"></div>
-                    <div class="skeleton-text content skeleton"></div>
-                    <div class="skeleton-text price skeleton"></div>
-                </div>
-                <div class="skeleton-card skeleton">
-                    <div class="skeleton-image skeleton"></div>
-                    <div class="skeleton-text title skeleton"></div>
-                    <div class="skeleton-text content skeleton"></div>
-                    <div class="skeleton-text price skeleton"></div>
-                </div>
-                <div class="skeleton-card skeleton">
-                    <div class="skeleton-image skeleton"></div>
-                    <div class="skeleton-text title skeleton"></div>
-                    <div class="skeleton-text content skeleton"></div>
-                    <div class="skeleton-text price skeleton"></div>
-                </div>
-                <div class="skeleton-card skeleton">
-                    <div class="skeleton-image skeleton"></div>
-                    <div class="skeleton-text title skeleton"></div>
-                    <div class="skeleton-text content skeleton"></div>
-                    <div class="skeleton-text price skeleton"></div>
-                </div>
+                <div class="skeleton-card skeleton glass-effect"></div>
+                <div class="skeleton-card skeleton glass-effect"></div>
+                <div class="skeleton-card skeleton glass-effect"></div>
+                <div class="skeleton-card skeleton glass-effect"></div>
                 <!-- Products will be dynamically loaded here -->
-                
                 <!-- Error state (hidden by default) -->
                 <div class="error-state" id="products-error" style="display: none;">
                     <i class="fas fa-exclamation-triangle"></i>
                     <h3>Failed to Load Products</h3>
                     <p>Please check your connection and try again.</p>
-                    <button class="btn btn-primary" onclick="location.reload()">Retry</button>
+                    <button class="btn btn-primary glass-btn" onclick="location.reload()">Retry</button>
                 </div>
             </div>
         </div>
@@ -169,10 +149,10 @@
     <!-- Deals Section -->
     <section class="deals" id="deals">
         <div class="container">
-            <h2 class="section-title">Hot Deals</h2>
+            <h2 class="section-title gradient-text">Hot Deals</h2>
             <div class="deals-container">
-                <div class="deal-card featured-deal">
-                    <div class="deal-badge">Limited Time</div>
+                <div class="deal-card featured-deal glass-effect">
+                    <div class="deal-badge neon-glow">Limited Time</div>
                     <h3>Gaming Setup Bundle</h3>
                     <p>Complete gaming setup with RGB lighting</p>
                     <div class="deal-price">
@@ -193,23 +173,23 @@
                             <span class="timer-label">Seconds</span>
                         </div>
                     </div>
-                    <button class="btn btn-primary" id="claim-deal-btn" aria-label="Claim limited time gaming setup bundle deal">
+                    <button class="btn btn-primary glass-btn" id="claim-deal-btn" aria-label="Claim limited time gaming setup bundle deal">
                         <span class="btn-text">Claim Deal</span>
                         <span class="loading-spinner" style="display: none;"></span>
                     </button>
                 </div>
-                <div class="deals-grid">
-                    <div class="deal-item">
+                <div class="deals-grid modern-deals">
+                    <div class="deal-item glass-effect">
                         <h4>Gaming Mouse</h4>
                         <span class="discount">-30%</span>
                         <p>$49.99</p>
                     </div>
-                    <div class="deal-item">
+                    <div class="deal-item glass-effect">
                         <h4>Mechanical Keyboard</h4>
                         <span class="discount">-25%</span>
                         <p>$89.99</p>
                     </div>
-                    <div class="deal-item">
+                    <div class="deal-item glass-effect">
                         <h4>Gaming Headset</h4>
                         <span class="discount">-40%</span>
                         <p>$79.99</p>
@@ -220,29 +200,29 @@
     </section>
 
     <!-- Newsletter -->
-    <section class="newsletter">
+    <section class="newsletter glass-effect">
         <div class="container">
-            <h2>Stay Updated</h2>
+            <h2 class="gradient-text">Stay Updated</h2>
             <p>Get the latest gaming news, deals, and product launches</p>
             <form class="newsletter-form">
                 <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
+                <button type="submit" class="btn btn-primary glass-btn">Subscribe</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer glass-effect">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>GameZone</h3>
+                    <h3 class="gradient-text">GameZone</h3>
                     <p>Your ultimate destination for gaming gear and accessories.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="icon-btn"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="icon-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="icon-btn"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
