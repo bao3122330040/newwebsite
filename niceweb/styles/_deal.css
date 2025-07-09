@@ -1,0 +1,22 @@
+/* Deal section styles */
+.deals {
+    padding: 5rem 0;
+    background: #111;
+}
+
+.deals-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.featured-deal {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #ff0080;
+    position: relative;
+    overflow: hidden;
+}

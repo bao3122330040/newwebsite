@@ -120,69 +120,20 @@
     border: 1.5px solid rgba(255,0,0,0.13);
     box-shadow: 0 2px 8px 0 rgba(255,0,0,0.08);
 }
-/* CSS Custom Properties */
-:root {
-    /* Warm accent colors */
-    --warm-orange: #ff6b35;
-    --warm-gold: #ffd700;
-    --warm-coral: #ff7f7f;
-    
-    /* Neutral gaming colors */
-    --gaming-purple: #8b5cf6;
-    --electric-green: #10b981;
-    
-    /* Improved background colors */
-    --bg-primary: #0f0f0f;
-    --bg-secondary: #111111;
-    --bg-card: #1a1a2e;
-    --bg-card-hover: #16213e;
-    
-    /* Enhanced text contrast */
-    --text-primary: #ffffff;
-    --text-secondary: #e5e5e5;
-    --text-tertiary: #cccccc;
-    --text-muted: #999999;
-    
-    /* Original brand colors */
-    --brand-cyan: #00f5ff;
-    --brand-pink: #ff0080;
-    
-    /* Spacing system */
-    --space-xs: 0.5rem;
-    --space-sm: 0.75rem;
-    --space-md: 1rem;
-    --space-lg: 1.5rem;
-    --space-xl: 2rem;
-    --space-2xl: 3rem;
-    
-    /* Touch targets */
-    --touch-target: 44px;
-}
+@import url('./styles/_variables.css');
+@import url('./styles/_reset.css');
+@import url('./styles/_typography.css');
+@import url('./styles/_header.css');
+@import url('./styles/_hero.css');
+@import url('./styles/_button.css');
+@import url('./styles/_category.css');
+@import url('./styles/_product.css');
+@import url('./styles/_deal.css');
+@import url('./styles/_newsletter.css');
+@import url('./styles/_footer.css');
+@import url('./styles/_modern.css');
 
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: var(--text-tertiary);
-    background: var(--bg-primary);
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-xl);
-}
+/* ...existing code... */
 
 /* Loading States */
 .skeleton {

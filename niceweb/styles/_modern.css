@@ -1,0 +1,52 @@
+/* Modern UI enhancements, glass, gradient, neon, icon-btn, etc. */
+.glass-effect {
+    background: rgba(30, 34, 54, 0.7) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--warm-orange), var(--brand-cyan), var(--brand-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.neon-glow {
+    box-shadow: 0 0 16px 2px var(--brand-cyan), 0 0 32px 4px var(--brand-pink);
+    border: 1.5px solid var(--brand-cyan);
+    animation: neonPulse 2s infinite alternate;
+}
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 8px 2px var(--brand-cyan), 0 0 16px 4px var(--brand-pink); }
+    100% { box-shadow: 0 0 24px 6px var(--brand-cyan), 0 0 48px 12px var(--brand-pink); }
+}
+
+.gradient-bg {
+    background: linear-gradient(120deg, #181c24 0%, #23283a 50%, #1a1a2e 100%) !important;
+}
+
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: background 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    border: none;
+    outline: none;
+}
+.icon-btn:hover, .icon-btn:focus {
+    background: linear-gradient(90deg, var(--warm-orange), var(--brand-cyan));
+    color: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0,245,255,0.18);
+}
